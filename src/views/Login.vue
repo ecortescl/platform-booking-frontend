@@ -1,6 +1,14 @@
 <template>
-    <div>
-      <Navbar />  </div>
+    
+
+    <nav class="flex w-full bg-gray-800 p-4 ">
+      <div class="bg-black-500 p-4 flex-1">Profesionales</div>
+      <div class="bg-black-500 p-4 flex-1">Servicios</div>
+      <div class="bg-black-500 p-4 flex-1">Sucursales y horarios</div>
+      <div class="bg-black-500 p-4 flex-1">sobre nosotros</div>
+      <div class="bg-black-500 p-4 flex-1">atencion al cliente</div>
+      
+    </nav>
   
       <div class="login-page">
         <div class="login-column">
