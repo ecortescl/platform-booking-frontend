@@ -7,7 +7,9 @@
           <form @submit.prevent="login">
             <div class="info-column">
               <!-- Aquí puedes agregar cualquier contenido adicional, como imágenes o texto informativo -->
-              <h2>Bienvenido</h2>
+              <h1 class="text-3xl font-bold">          
+                        Bienvenido
+                         </h1>
               <p>Ingresa tus credenciales para acceder a tu cuenta.</p>
             </div>
   

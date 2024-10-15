@@ -1,7 +1,8 @@
 <template>
     <div>
-      <h1>Home Page</h1>
-      <p>Welcome to the Home Page!</p>
+      <h1 class="text-7xl font-bold ">
+    Hello world! con tailwind
+  </h1>
     </div>
   </template>
   
