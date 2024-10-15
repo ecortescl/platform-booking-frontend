@@ -2,11 +2,27 @@
     <div class="register-form">
       <form @submit.prevent="register">
         <div>
-          <label for="email">Correo Electrónico:</label>
+          <div>
+          <label for="rut">Rut : </label>
+          <input type="rut" v-model="rut" required />
+        </div>
+        <div>
+          <label for="name">Nombres : </label>
+          <input type="name" v-model="name" required />
+        </div>
+        <div>
+          <label for="surname">Apellidos : </label>
+          <input type="surname" v-model="surname" required />
+        </div>
+        <div>
+          <label for="phone">telefono : </label>
+          <input type="phone" v-model="phone" required />
+        </div>
+          <label for="email">Correo Electrónico : </label>
           <input type="email" v-model="email" required />
         </div>
         <div>
-          <label for="password">Contraseña:</label>
+          <label for="password">Contraseña : </label>
           <input type="password" v-model="password" required minlength="6" />
         </div>
         <button type="submit">Registrarse</button>
