@@ -3,15 +3,15 @@
     <form @submit.prevent="register">
       <div>
         <label for="rut">Rut : </label>
-        <input type="text" v-model="rut" required />
+        <input type="text" v-model="run" required />
       </div>
       <div>
         <label for="name">Nombres : </label>
-        <input type="text" v-model="name" required />
+        <input type="text" v-model="names" required />
       </div>
       <div>
         <label for="surname">Apellidos : </label>
-        <input type="text" v-model="surname" required />
+        <input type="text" v-model="surnames" required />
       </div>
       <div>
         <label for="phone">Telefono : </label>
@@ -35,12 +35,14 @@
 export default {
   data() {
     return {
-      rut: '',
-      name: '',
-      surname: '',
+      run: '',
+      names: '',
+      surnames: '',
       phone: '',
       email: '',
       password: '',
+      idRole: '1',
+      registered: true,
       error: ''
     };
   },
@@ -53,11 +55,13 @@ export default {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            rut: this.rut,
-            name: this.name,
-            surname: this.surname,
+            run: this.run,
+            names: this.names,
+            surnames: this.surnames,
             phone: this.phone,
             email: this.email,
+            idRole: this.idRole,
+            registered: this.registered,
             password: this.password
           })
         });

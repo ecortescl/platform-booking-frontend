@@ -17,6 +17,143 @@
       "phone": "912348881",
       "email": "vicenteiasdiks@gmail.com",
       "password": "askdjkasdkjsac"
+    },
+    {
+      "id": "15db",
+      "rut": "asdhjkadhjk",
+      "name": "kasdjkasjk",
+      "surname": "kasdjksajk",
+      "phone": "kjasdjk",
+      "email": "asjdajk@sjdj.cl",
+      "idrole": "1",
+      "password": "asdskjadd"
+    },
+    {
+      "id": "10e1",
+      "run": "",
+      "names": "",
+      "surnames": "",
+      "phone": "fffffffff",
+      "email": "ffffffffff@ggg.com",
+      "idRole": "1",
+      "password": "fffffffffffff"
+    },
+    {
+      "id": "cd60",
+      "run": "",
+      "names": "",
+      "surnames": "",
+      "phone": "912873477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "password": "javierjavier"
+    },
+    {
+      "id": "e537",
+      "run": "",
+      "names": "",
+      "surnames": "",
+      "phone": "92387477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "javiuerjavier"
+    },
+    {
+      "id": "d46e",
+      "run": "",
+      "names": "",
+      "surnames": "",
+      "phone": "92387477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "javiuerjavier"
+    },
+    {
+      "id": "7b84",
+      "run": "",
+      "names": "",
+      "surnames": "",
+      "phone": "92387477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "javiuerjavier"
+    },
+    {
+      "id": "8d4e",
+      "run": "",
+      "names": "asdasd",
+      "surnames": "asdadsas",
+      "phone": "92387477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "javiuerjavier"
+    },
+    {
+      "id": "ba58",
+      "run": "20398484",
+      "names": "javier",
+      "surnames": "javier",
+      "phone": "92387477",
+      "email": "javierjavier@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "javiuerjavier"
+    },
+    {
+      "id": "ae0f",
+      "rut": "asdasdsad",
+      "name": "asdasdasd",
+      "surname": "asdadsasd",
+      "phone": "asdadsa",
+      "email": "ajshdhasj@askdasd.cl",
+      "password": "asdasdsad",
+      "registered": true
+    },
+    {
+      "id": "7f58",
+      "run": "asdsadsad",
+      "names": "asdasdsad",
+      "surnames": "asdasdsa",
+      "phone": "asdsadsad",
+      "email": "asdasd@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "asjdhsahjda"
+    },
+    {
+      "id": "3007",
+      "run": "asdsadsad",
+      "names": "gabriel",
+      "surnames": "daher",
+      "phone": "asdsadsad",
+      "email": "asdasd@gmail.com",
+      "idRole": "1",
+      "registered": true,
+      "password": "asjdhsahjda"
+    },
+    {
+      "id": "4fda",
+      "rut": "23427834728",
+      "name": "javier",
+      "surname": "javiert",
+      "phone": "012034777",
+      "email": "jaajajsiviver@gmail.com",
+      "password": "asjdjasdhhff",
+      "registered": true
+    },
+    {
+      "id": "c9b7",
+      "rut": "23427834728",
+      "name": "javier",
+      "surname": "javiert",
+      "phone": "012034777",
+      "email": "jaajajsiviver@gmail.com",
+      "password": "asjdjasdhhff",
+      "registered": true
     }
   ]
 }
