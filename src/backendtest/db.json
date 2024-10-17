@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "e0f4",
+      "rut": "2091238",
+      "name": "javier",
+      "surname": "jasvier",
+      "phone": "912348881",
+      "email": "vicenteiasdiks@gmail.com",
+      "password": "askdjkasdkjsac"
+    },
+    {
+      "id": "a59f",
+      "rut": "2091238",
+      "name": "javier",
+      "surname": "jasvier",
+      "phone": "912348881",
+      "email": "vicenteiasdiks@gmail.com",
+      "password": "askdjkasdkjsac"
+    }
+  ]
+}
