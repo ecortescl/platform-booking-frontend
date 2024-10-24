@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f9fafb; /* Cambia a un color de fondo claro */
+  background: linear-gradient(135deg, #e0e0e0 0%, #cfcfcf 100%); /* Degradado gris */
   color: #000000; /* Texto por defecto en negro */
 }
 
