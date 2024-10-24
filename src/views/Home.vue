@@ -12,8 +12,10 @@
 
 
       </h1>
+
       <ProfessionalSearch @search="handleSearch" />
     </div>
+
 
     <div class="how-it-works">
       <h2 class="text-4xl mb-6 text-overlay">¿Cómo Funciona Nuestro Servicio?</h2>
@@ -51,47 +53,40 @@
       </div>
     </div>
 
-    <div class="reviews mt-10">
-      <h3 class="text-3xl mb-4 text-overlay">Lo que dicen nuestros usuarios</h3>
-      <div class="review-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="review-item border rounded-lg p-4 shadow-lg">
-          <div class="flex items-center mb-2">
-            <img src="https://fastly.picsum.photos/id/64/4326/2884.jpg?hmac=9_SzX666YRpR_fOyYStXpfSiJ_edO3ghlSRnH2w09Kg" alt="Usuario" class="rounded-full w-12 h-12 mr-2" />
-            <div>
-              <p class="font-semibold">Juan Pérez</p>
-              <div class="stars">
-                <span v-for="star in 5" :key="star" class="text-yellow-500">&#9733;</span>
-              </div>
+    <div class="flex justify-center">
+  <div class="reviews mt-10 max-w-full px-4">
+    <h3 class="text-3xl mb-4 text-overlay text-center">Lo que dicen nuestros usuarios</h3>
+    <div class="review-grid grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="review-item border rounded-lg p-4 shadow-lg">
+        <div class="flex items-center mb-2">
+          <img src="https://fastly.picsum.photos/id/64/4326/2884.jpg?hmac=9_SzX666YRpR_fOyYStXpfSiJ_edO3ghlSRnH2w09Kg" alt="Usuario" class="rounded-full w-12 h-12 mr-2" />
+          <div>
+            <p class="font-semibold">Juan Pérez</p>
+            <div class="stars">
+              <span v-for="star in 5" :key="star" class="text-yellow-500">&#9733;</span>
             </div>
           </div>
-          <p class="text-xl italic">"Excelente servicio, muy profesional."</p>
         </div>
-        <div class="review-item border rounded-lg p-4 shadow-lg">
-          <div class="flex items-center mb-2">
-            <img src="https://picsum.photos/id/338/2000/1333" alt="Usuario" class="rounded-full w-12 h-12 mr-2" />
-            <div>
-              <p class="font-semibold">Ana Gómez</p>
-              <div class="stars">
-                <span v-for="star in 5" :key="star" class="text-yellow-500">&#9733;</span>
-              </div>
-            </div>
-          </div>
-          <p class="text-xl italic">"Me ayudaron a encontrar exactamente lo que necesitaba."</p>
-        </div>
-        <div class="review-item border rounded-lg p-4 shadow-lg">
-          <div class="flex items-center mb-2">
-            <img src="https://picsum.photos/id/349/3264/2176" alt="Usuario" class="rounded-full w-12 h-12 mr-2" />
-            <div>
-              <p class="font-semibold">Luis Rodríguez</p>
-              <div class="stars">
-                <span v-for="star in 5" :key="star" class="text-yellow-500">&#9733;</span>
-              </div>
-            </div>
-          </div>
-          <p class="text-xl italic">"Rápido y fácil, ¡recomendado!"</p>
-        </div>
+        <p class="text-xl italic">"Excelente servicio, muy profesional."</p>
       </div>
+      <div class="review-item border rounded-lg p-4 shadow-lg">
+        <div class="flex items-center mb-2">
+          <img src="https://picsum.photos/id/338/2000/1333" alt="Usuario" class="rounded-full w-12 h-12 mr-2" />
+          <div>
+            <p class="font-semibold">Ana Gómez</p>
+            <div class="stars">
+              <span v-for="star in 5" :key="star" class="text-yellow-500">&#9733;</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-xl italic">"Me ayudaron a encontrar exactamente lo que necesitaba."</p>
+      </div>
+      
     </div>
+  </div>
+</div>
+
+
 
     <div class="faq mt-10">
       <h3 class="text-3xl mb-4 text-overlay">Preguntas Frecuentes</h3>
