@@ -6,6 +6,11 @@
         Buscar Profesionales
       </h1>
       <ProfessionalSearch @search="handleSearch" />
+
+
+
+
+    
     </div>
   </div>
 </template>

@@ -1,19 +1,66 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-gray-200">
-    <div class="flex items-center justify-center flex-1">
-      <div class="bg-[#1f2937] shadow-md rounded-lg p-8 max-w-sm w-full">
-        <h1 class="text-3xl font-bold text-center mb-6 text-white">About Page</h1>
-        <p class="text-gray-300 text-center mb-6">Learn more about us on this page.</p>
-        <ProfessionalSearch />
-      </div>
+  <div class="professional-details">
+    <ProfessionalSearch @search="handleSearch" />
+    <div class="professional-info">
+      <h2>{{ profesional.nombre }}</h2>
+      <p><strong>Especialidades:</strong> {{ profesional.especialidades.join(', ') }}</p>
+      <p><strong>Experiencia:</strong> {{ profesional.experiencia }} años</p>
+      <p><strong>Contacto:</strong> {{ profesional.contacto }}</p>
+      <h3>Reseñas y Calificaciones</h3>
+      <ul>
+        <li v-for="reseña in profesional.reseñas" :key="reseña.id">
+          {{ reseña.usuario }}: {{ reseña.comentario }} ({{ reseña.calificacion }} estrellas)
+        </li>
+      </ul>
+      <button @click="reservarCita">Reservar Cita</button>
     </div>
   </div>
 </template>
 
-<script setup>
-import ProfessionalSearch from '../components/ProfessionalSearch.vue'; // Import the component
+<script>
+import ProfessionalSearch from '../components/ProfessionalSearch.vue';
+
+export default {
+  components: {
+    ProfessionalSearch
+  },
+  data() {
+    return {
+      profesional: {
+        nombre: 'Dr. Juan Pérez',
+        especialidades: ['Cardiología', 'Medicina Interna'],
+        experiencia: 10,
+        contacto: 'juan.perez@ejemplo.com',
+        reseñas: [
+          { id: 1, usuario: 'Ana', comentario: 'Excelente atención', calificacion: 5 },
+          { id: 2, usuario: 'Carlos', comentario: 'Muy profesional', calificacion: 4 }
+        ]
+      }
+    };
+  },
+  methods: {
+    reservarCita() {
+      this.$router.push(`/reservar/${this.profesional.nombre}`);
+    }
+  }
+};
 </script>
 
 <style scoped>
-/* Optional additional styles that might not be in Tailwind */
+.professional-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.professional-info {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #42b983;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 </style>
