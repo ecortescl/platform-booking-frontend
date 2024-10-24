@@ -28,19 +28,26 @@
   <input v-model="availability" type="date" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
   <input v-model="availabilityEnd" type="date" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mt-2">
 </div>
-      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Buscar</button>
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Buscar</button>  
     </form>
+    
   </div>
 </template>
 
 <script>
+import SearchResults from './SearchResults.vue';
+
 export default {
   name: 'ProfessionalSearch',
+  components: {
+    SearchResults
+  },
   data() {
     return {
       specialty: '',
       location: '',
-      availability: ''
+      availability: '',
+      searchResults: []
     };
   },
   methods: {
@@ -58,8 +65,7 @@ export default {
           })
         });
         const data = await response.json();
-        // Handle the response data as needed
-        console.log(data);
+        this.searchResults = data.results; // Assuming the API returns an object with a 'results' array
       } catch (error) {
         console.error('Error fetching professionals:', error);
       }

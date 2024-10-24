@@ -1,24 +1,66 @@
 <template>
-    <div class="bg-white shadow-md rounded-lg p-4 max-w-sm w-full">
-      <h2 class="text-2xl font-bold text-center mb-4">Search Results</h2>
-      <ul>
-        <li v-for="result in results" :key="result.id" class="mb-2">
-          <p class="text-gray-700">{{ result.title }}</p>
-        </li>
-      </ul>
+  <div>
+    <ul>
+      <li v-for="professional in paginatedResults" :key="professional.id">
+        {{ professional.name }} - {{ professional.specialty }}
+      </li>
+    </ul>
+    <div class="pagination">
+      <button @click="prevPage" :disabled="currentPage === 1">Anterior</button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">Siguiente</button>
     </div>
-  </template>
-  
-  <script setup>
-  
-  const props = defineProps({
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'SearchResults',
+  props: {
     results: {
       type: Array,
       required: true
+    },
+    itemsPerPage: {
+      type: Number,
+      default: 10
     }
-  });
-  </script>
-  
-  <style scoped>
-  
-  </style>
+  },
+  data() {
+    return {
+      currentPage: 1
+    };
+  },
+  computed: {
+    totalPages() {
+      return Math.ceil(this.results.length / this.itemsPerPage);
+    },
+    paginatedResults() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.results.slice(start, end);
+    }
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+</style>
