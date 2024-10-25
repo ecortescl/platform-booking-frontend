@@ -33,7 +33,7 @@
       </form>
     </div>
 
-    <SearchResults :results="searchResults" />
+    <SearchResults :results="searchResults" :searchPerformed="searchPerformed" @select-professional="selectProfessional" />
   </div>
 </template>
 
@@ -51,11 +51,13 @@ export default {
       location: '',
       availability: '',
       availabilityEnd: '',
-      searchResults: []
+      searchResults: [],
+      searchPerformed: false
     };
   },
   methods: {
     async searchProfessionals() {
+      this.searchPerformed = true;
       try {
         const queryParams = new URLSearchParams({
           specialty: this.specialty,
@@ -77,6 +79,9 @@ export default {
       } catch (error) {
         console.error('Error fetching professionals:', error);
       }
+    },
+    selectProfessional(professional) {
+      this.$emit('select-professional', professional);
     }
   }
 };
