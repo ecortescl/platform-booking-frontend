@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div v-if="results.length" class="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
+    <h3 class="text-xl font-bold mb-4">Resultados de Búsqueda</h3>
     <ul>
-      <li v-for="professional in paginatedResults" :key="professional.id">
-        {{ professional.name }} - {{ professional.specialty }}
+      <li v-for="professional in results" :key="professional.id" class="mb-4 p-4 border rounded-lg shadow-sm">
+        <p class="text-lg font-semibold"><strong>Nombre:</strong> {{ professional.name }}</p>
+        <p class="text-gray-700"><strong>Especialidad:</strong> {{ professional.specialty }}</p>
+        <p class="text-gray-700"><strong>Ubicación:</strong> {{ professional.location }}</p>
+        <p class="text-gray-700"><strong>Disponibilidad:</strong> {{ professional.availability }}</p>
       </li>
     </ul>
-    <div class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">Anterior</button>
-      <span>Página {{ currentPage }} de {{ totalPages }}</span>
-      <button @click="nextPage" :disabled="currentPage === totalPages">Siguiente</button>
-    </div>
+  </div>
+  <div v-else class="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
+    <p class="text-gray-700">No se encontraron resultados</p>
   </div>
 </template>
 
@@ -20,47 +22,11 @@ export default {
     results: {
       type: Array,
       required: true
-    },
-    itemsPerPage: {
-      type: Number,
-      default: 10
-    }
-  },
-  data() {
-    return {
-      currentPage: 1
-    };
-  },
-  computed: {
-    totalPages() {
-      return Math.ceil(this.results.length / this.itemsPerPage);
-    },
-    paginatedResults() {
-      const start = (this.currentPage - 1) * this.itemsPerPage;
-      const end = start + this.itemsPerPage;
-      return this.results.slice(start, end);
-    }
-  },
-  methods: {
-    nextPage() {
-      if (this.currentPage < this.totalPages) {
-        this.currentPage++;
-      }
-    },
-    prevPage() {
-      if (this.currentPage > 1) {
-        this.currentPage--;
-      }
     }
   }
 };
 </script>
 
 <style scoped>
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
+/* Add any additional styles if needed */
 </style>
