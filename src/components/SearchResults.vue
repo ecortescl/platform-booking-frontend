@@ -14,12 +14,18 @@
     <div v-else class="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
       <p class="text-gray-700">No se encontraron resultados</p>
     </div>
+    <ProfessionalModal :visible="modalVisible" :professional="selectedProfessional" @close="modalVisible = false" />
   </div>
 </template>
 
 <script>
+import ProfessionalModal from './ProfessionalModal.vue';
+
 export default {
   name: 'SearchResults',
+  components: {
+    ProfessionalModal
+  },
   props: {
     results: {
       type: Array,
@@ -30,9 +36,16 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      modalVisible: false,
+      selectedProfessional: null
+    };
+  },
   methods: {
     selectProfessional(professional) {
-      this.$emit('select-professional', professional);
+      this.selectedProfessional = professional;
+      this.modalVisible = true;
     }
   }
 };
