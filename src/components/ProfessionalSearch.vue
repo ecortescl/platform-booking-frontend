@@ -34,16 +34,20 @@
     </div>
 
     <SearchResults :results="searchResults" :searchPerformed="searchPerformed" @select-professional="selectProfessional" />
+
+    <ProfessionalInfo v-if="selectedProfessional" :profesional="selectedProfessional" :show="showProfessionalInfo" @close="closeProfessionalInfo" />
   </div>
 </template>
 
 <script>
 import SearchResults from './SearchResults.vue';
+import ProfessionalInfo from './ProfessionalInfo.vue';
 
 export default {
   name: 'ProfessionalSearch',
   components: {
-    SearchResults
+    SearchResults,
+    ProfessionalInfo
   },
   data() {
     return {
@@ -52,7 +56,9 @@ export default {
       availability: '',
       availabilityEnd: '',
       searchResults: [],
-      searchPerformed: false
+      searchPerformed: false,
+      selectedProfessional: null,
+      showProfessionalInfo: false
     };
   },
   methods: {
@@ -81,7 +87,11 @@ export default {
       }
     },
     selectProfessional(professional) {
-      this.$emit('select-professional', professional);
+      this.selectedProfessional = professional;
+      this.showProfessionalInfo = true;
+    },
+    closeProfessionalInfo() {
+      this.showProfessionalInfo = false;
     }
   }
 };
