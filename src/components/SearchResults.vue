@@ -1,7 +1,7 @@
 <template>
   <div v-if="searchPerformed">
     <div v-if="results.length" class="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
-      <h3 class="text-xl font-bold mb-4">Resultados de Búsqueda</h3>
+      <h3 class="text-xl font-bold mb-4">Doctores disponibles</h3>
       <ul>
         <li v-for="professional in results" :key="professional.id" class="mb-2 p-2 border rounded-lg shadow-sm cursor-pointer" @click="selectProfessional(professional)">
           <p class="text-lg font-semibold"><strong>Nombre:</strong> {{ professional.name }}</p>
