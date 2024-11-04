@@ -10,7 +10,7 @@
 
 <script>
 import { ref } from 'vue';
-import navbar from '../components/navbar.vue';
+import Navbar from '../components/Navbar.vue'; // Importar el componente Navbar
 import professionalInformation from '../components/professionalInformation.vue';
 
 export default {
