@@ -2,7 +2,7 @@
   <nav class="bg-nav-bg text-nav-text font-nav p-2 rounded-md fixed top-0 w-full z-50 shadow-md">
     <div class="container mx-auto flex items-center justify-between">
       <div class="flex items-center">
-        <router-link to="/" class="flex items-center">
+        <router-link to="/home" class="flex items-center">
           <img :src="logo" alt="Logo" class="h-10 mr-4" />
         </router-link>
         <ul class="flex gap-8 ml-2">

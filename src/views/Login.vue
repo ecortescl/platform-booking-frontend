@@ -26,6 +26,7 @@
               required
               class="mt-1 block w-full p-2 border border-gray-500 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
             />
+            
           </div>
           <!-- Botón modificado -->
           <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-[#FFD700] transition duration-200">
@@ -39,7 +40,11 @@
             to="/forgotpass" 
             class="text-blue-500 hover:text-[#FFD700] transition duration-200">
             ¿Olvidó su contraseña?
+
+            
           </router-link>
+
+          
         </div>
       </div>
     </div>

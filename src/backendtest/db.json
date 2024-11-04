@@ -1,159 +1,55 @@
 {
-  "users": [
+  "professionals": [
     {
-      "id": "e0f4",
-      "rut": "2091238",
-      "name": "javier",
-      "surname": "jasvier",
-      "phone": "912348881",
-      "email": "vicenteiasdiks@gmail.com",
-      "password": "askdjkasdkjsac"
+      "id": 1,
+      "name": "Dr. Juan Pérez",
+      "specialty": "Dentista",
+      "location": "Maipu",
+      "availability": "2024-10-25"
     },
     {
-      "id": "a59f",
-      "rut": "2091238",
-      "name": "javier",
-      "surname": "jasvier",
-      "phone": "912348881",
-      "email": "vicenteiasdiks@gmail.com",
-      "password": "askdjkasdkjsac"
+      "id": 2,
+      "name": "Dra. María López",
+      "specialty": "Cardiólogo",
+      "location": "Puente Alto",
+      "availability": "2024-10-27"
     },
     {
-      "id": "15db",
-      "rut": "asdhjkadhjk",
-      "name": "kasdjkasjk",
-      "surname": "kasdjksajk",
-      "phone": "kjasdjk",
-      "email": "asjdajk@sjdj.cl",
-      "idrole": "1",
-      "password": "asdskjadd"
+      "id": 3,
+      "name": "Dr. Carlos Sánchez",
+      "specialty": "Pediatra",
+      "location": "Santiago",
+      "availability": "2024-10-28"
     },
     {
-      "id": "10e1",
-      "run": "",
-      "names": "",
-      "surnames": "",
-      "phone": "fffffffff",
-      "email": "ffffffffff@ggg.com",
-      "idRole": "1",
-      "password": "fffffffffffff"
+      "id": 4,
+      "name": "Dra. Ana Martínez",
+      "specialty": "Pediatra",
+      "location": "La Florida",
+      "availability": "2024-10-29"
     },
     {
-      "id": "cd60",
-      "run": "",
-      "names": "",
-      "surnames": "",
-      "phone": "912873477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "password": "javierjavier"
+      "id": 5,
+      "name": "Dr. José Rodríguez",
+      "specialty": "Cardiólogo",
+      "location": "Las Condes",
+      "availability": "2024-10-30"
     },
     {
-      "id": "e537",
-      "run": "",
-      "names": "",
-      "surnames": "",
-      "phone": "92387477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "javiuerjavier"
-    },
+        "id": 6,
+        "name": "Dr. Ramon Rodríguez",
+        "specialty": "Dentista",
+        "location": "Las Condes",
+        "availability": "2024-10-28"
+    }, 
     {
-      "id": "d46e",
-      "run": "",
-      "names": "",
-      "surnames": "",
-      "phone": "92387477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "javiuerjavier"
-    },
-    {
-      "id": "7b84",
-      "run": "",
-      "names": "",
-      "surnames": "",
-      "phone": "92387477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "javiuerjavier"
-    },
-    {
-      "id": "8d4e",
-      "run": "",
-      "names": "asdasd",
-      "surnames": "asdadsas",
-      "phone": "92387477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "javiuerjavier"
-    },
-    {
-      "id": "ba58",
-      "run": "20398484",
-      "names": "javier",
-      "surnames": "javier",
-      "phone": "92387477",
-      "email": "javierjavier@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "javiuerjavier"
-    },
-    {
-      "id": "ae0f",
-      "rut": "asdasdsad",
-      "name": "asdasdasd",
-      "surname": "asdadsasd",
-      "phone": "asdadsa",
-      "email": "ajshdhasj@askdasd.cl",
-      "password": "asdasdsad",
-      "registered": true
-    },
-    {
-      "id": "7f58",
-      "run": "asdsadsad",
-      "names": "asdasdsad",
-      "surnames": "asdasdsa",
-      "phone": "asdsadsad",
-      "email": "asdasd@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "asjdhsahjda"
-    },
-    {
-      "id": "3007",
-      "run": "asdsadsad",
-      "names": "gabriel",
-      "surnames": "daher",
-      "phone": "asdsadsad",
-      "email": "asdasd@gmail.com",
-      "idRole": "1",
-      "registered": true,
-      "password": "asjdhsahjda"
-    },
-    {
-      "id": "4fda",
-      "rut": "23427834728",
-      "name": "javier",
-      "surname": "javiert",
-      "phone": "012034777",
-      "email": "jaajajsiviver@gmail.com",
-      "password": "asjdjasdhhff",
-      "registered": true
-    },
-    {
-      "id": "c9b7",
-      "rut": "23427834728",
-      "name": "javier",
-      "surname": "javiert",
-      "phone": "012034777",
-      "email": "jaajajsiviver@gmail.com",
-      "password": "asjdjasdhhff",
-      "registered": true
+        "id": 7,
+        "name": "Dra. Maria Rodriguez",
+        "specialty": "Dentista",
+        "location": "Las Condes",
+        "availability": "2024-10-28"
     }
+
+    
   ]
 }

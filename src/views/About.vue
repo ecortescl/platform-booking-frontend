@@ -1,12 +1,37 @@
 <template>
-    <div>
-      <h1>About Page</h1>
-      <p>Learn more about us on this page.</p>
+  <div class="mt-16">
+    <ProfessionalSearch @search="handleSearch" @select-professional="selectProfessional" />
+    <div v-if="selectedProfessional" class="mt-4">
+      <ProfessionalInfo :profesional="selectedProfessional" />
     </div>
-  </template>
-  
-  <script setup>
-  </script>
-  
-  <style scoped>
-  </style>
+  </div>
+</template>
+
+<script>
+import ProfessionalSearch from '../components/ProfessionalSearch.vue';
+import ProfessionalInfo from '../components/ProfessionalInfo.vue';
+
+export default {
+  components: {
+    ProfessionalSearch,
+    ProfessionalInfo
+  },
+  data() {
+    return {
+      selectedProfessional: null
+    };
+  },
+  methods: {
+    handleSearch() {
+      // Implement search logic here
+    },
+    selectProfessional(professional) {
+      this.selectedProfessional = professional;
+    }
+  }
+};
+</script>
+
+<style scoped>
+/* Add any additional styles if needed */
+</style>
