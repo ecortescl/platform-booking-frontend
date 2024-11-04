@@ -1,8 +1,8 @@
 <template>
-  <div class="reserve-page min-h-screen bg-white font-arima">
+  <div class="min-h-screen bg-white reserve-page font-arima">
     <Navbar /> <!-- Componente Navbar -->
-    <div class="container mx-auto py-8">
-      <h1 class="text-4xl font-bold text-center text-overlay mb-8">Ver profesionales</h1>
+    <div class="container py-8 mx-auto">
+      <h1 class="mb-8 text-4xl font-bold text-center text-overlay">Ver profesionales</h1>
       <ProfessionalInformation />
     </div>
   </div>
@@ -16,8 +16,8 @@ import ProfessionalInformation from '../components/ProfessionalInformation.vue';
 export default {
   name: 'Reserve',
   components: {
-    navbar,
-    professionalInformation
+    Navbar,
+    ProfessionalInformation
   },
 };
 </script>
