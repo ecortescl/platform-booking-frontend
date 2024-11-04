@@ -3,7 +3,7 @@
     <Navbar /> <!-- Componente Navbar -->
     <div class="container mx-auto py-8">
       <h1 class="text-4xl font-bold text-center text-overlay mb-8">Ver profesionales</h1>
-      <professional-information />
+      <ProfessionalInformation />
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 import { ref } from 'vue';
 import Navbar from '../components/Navbar.vue'; // Importar el componente Navbar
-import professionalInformation from '../components/professionalInformation.vue';
+import ProfessionalInformation from '../components/ProfessionalInformation.vue';
 
 export default {
   name: 'Reserve',
