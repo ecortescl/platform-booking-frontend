@@ -1,55 +1,71 @@
 {
-  "professionals": [
+  "profesionales": [
     {
       "id": 1,
-      "name": "Dr. Juan Pérez",
-      "specialty": "Dentista",
-      "location": "Maipu",
-      "availability": "2024-10-25"
+      "nombre": "Dr. Juan Pérez"
     },
     {
       "id": 2,
-      "name": "Dra. María López",
-      "specialty": "Cardiólogo",
-      "location": "Puente Alto",
-      "availability": "2024-10-27"
+      "nombre": "Dra. María López"
     },
     {
       "id": 3,
-      "name": "Dr. Carlos Sánchez",
-      "specialty": "Pediatra",
-      "location": "Santiago",
-      "availability": "2024-10-28"
+      "nombre": "Dr. Carlos García"
+    }
+  ],
+  "disponibilidad": [
+    {
+      "id": 1,
+      "profesionalId": 1,
+      "fecha": "2024-10-01",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
+    },
+    {
+      "id": 2,
+      "profesionalId": 1,
+      "fecha": "2024-10-01",
+      "horaInicio": "11:30",
+      "horaFin": "12:30"
+    },
+    {
+      "id": 3,
+      "profesionalId": 2,
+      "fecha": "2024-10-02",
+      "horaInicio": "09:00",
+      "horaFin": "10:00"
     },
     {
       "id": 4,
-      "name": "Dra. Ana Martínez",
-      "specialty": "Pediatra",
-      "location": "La Florida",
-      "availability": "2024-10-29"
+      "profesionalId": 2,
+      "fecha": "2024-10-02",
+      "horaInicio": "10:30",
+      "horaFin": "11:30"
     },
     {
       "id": 5,
-      "name": "Dr. José Rodríguez",
-      "specialty": "Cardiólogo",
-      "location": "Las Condes",
-      "availability": "2024-10-30"
+      "profesionalId": 3,
+      "fecha": "2024-10-03",
+      "horaInicio": "14:00",
+      "horaFin": "15:00"
     },
     {
-        "id": 6,
-        "name": "Dr. Ramon Rodríguez",
-        "specialty": "Dentista",
-        "location": "Las Condes",
-        "availability": "2024-10-28"
-    }, 
-    {
-        "id": 7,
-        "name": "Dra. Maria Rodriguez",
-        "specialty": "Dentista",
-        "location": "Las Condes",
-        "availability": "2024-10-28"
+      "id": 6,
+      "profesionalId": 3,
+      "fecha": "2024-10-03",
+      "horaInicio": "15:30",
+      "horaFin": "16:30"
     }
-
-    
+  ],
+  "reservas": [
+    {
+      "id": "4f7e",
+      "nombre": "Javier Moreno",
+      "correo": "javiiaisdia@hasdjas.cl",
+      "motivo": "asjdjasdjsad",
+      "fecha": "2024-10-02",
+      "horaInicio": "10:30",
+      "horaFin": "11:30"
+    }
   ]
 }

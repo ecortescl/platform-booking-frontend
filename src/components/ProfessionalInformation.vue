@@ -87,12 +87,11 @@ export default {
 
 button {
   transition: background-color 0.3s ease;
-  margin-bottom: var(--time-slot-margin-bottom, 80px); /* Puedes ajustar el valor predeterminado */
-
+  margin-bottom: var(--time-slot-margin-bottom, 80px); 
 }
 
-/* Ajusta el margen inferior del contenedor principal */
+
 .container {
-  margin-bottom: 2rem; /* Ajusta este valor según tus necesidades */
+  margin-bottom: 2rem; 
 }
 </style>

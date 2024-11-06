@@ -1,37 +1,45 @@
 <template>
-  <div class="mt-16">
-    <ProfessionalSearch @search="handleSearch" @select-professional="selectProfessional" />
-    <div v-if="selectedProfessional" class="mt-4">
-      <ProfessionalInfo :profesional="selectedProfessional" />
+  <div class="min-h-screen bg-white reserve-page font-arima">
+    <Navbar /> <!-- Componente Navbar -->
+    <div class="container py-8 mx-auto">
+      <h1 class="mb-8 text-4xl font-bold text-center text-overlay">Ver profesionales</h1>
+      <ProfessionalInformation />
     </div>
   </div>
 </template>
 
 <script>
-import ProfessionalSearch from '../components/ProfessionalSearch.vue';
-import ProfessionalInfo from '../components/ProfessionalInfo.vue';
+import { ref } from 'vue';
+import Navbar from '../components/Navbar.vue'; // Importar el componente Navbar
+import ProfessionalInformation from '../components/ProfessionalInformation.vue';
 
 export default {
+  name: 'Reserve',
   components: {
-    ProfessionalSearch,
-    ProfessionalInfo
+    Navbar,
+    ProfessionalInformation
   },
-  data() {
-    return {
-      selectedProfessional: null
-    };
-  },
-  methods: {
-    handleSearch() {
-      // Implement search logic here
-    },
-    selectProfessional(professional) {
-      this.selectedProfessional = professional;
-    }
-  }
 };
 </script>
 
 <style scoped>
-/* Add any additional styles if needed */
+.reserve-page {
+  background-color: #e6f0fa;
+}
+
+.text-overlay {
+  color: #154485;
+}
+
+.professional-card {
+  transition: transform 0.3s ease;
+}
+
+.professional-card:hover {
+  transform: scale(1.05);
+}
+
+.time-slot {
+  width: 70px;
+}
 </style>
