@@ -1,4 +1,55 @@
 {
+  "professionals": [
+    {
+      "id": 1,
+      "name": "Dr. Juan Pérez",
+      "specialty": "Dentista",
+      "location": "Maipu",
+      "availability": "2024-10-25"
+    },
+    {
+      "id": 2,
+      "name": "Dra. María López",
+      "specialty": "Cardiólogo",
+      "location": "Puente Alto",
+      "availability": "2024-10-27"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Carlos Sánchez",
+      "specialty": "Pediatra",
+      "location": "Santiago",
+      "availability": "2024-10-28"
+    },
+    {
+      "id": 4,
+      "name": "Dra. Ana Martínez",
+      "specialty": "Pediatra",
+      "location": "La Florida",
+      "availability": "2024-10-29"
+    },
+    {
+      "id": 5,
+      "name": "Dr. José Rodríguez",
+      "specialty": "Cardiólogo",
+      "location": "Las Condes",
+      "availability": "2024-10-30"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Ramon Rodríguez",
+      "specialty": "Dentista",
+      "location": "Las Condes",
+      "availability": "2024-10-28"
+    },
+    {
+      "id": 7,
+      "name": "Dra. Maria Rodriguez",
+      "specialty": "Dentista",
+      "location": "Las Condes",
+      "availability": "2024-10-28"
+    }
+  ],
   "profesionales": [
     {
       "id": 1,
@@ -10,12 +61,29 @@
     },
     {
       "id": 3,
-      "nombre": "Dr. Carlos García"
+      "nombre": "Dr. Carlos Sánchez"
+    },
+    {
+      "id": 4,
+      "nombre": "Dra. Ana Martínez"
+    },
+    {
+      "id": 5,
+      "nombre": "Dr. José Rodríguez"
+    },
+    {
+      "id": 6,
+      "nombre": "Dr. Ramon Rodríguez"
+    },
+    {
+      "id": 7,
+      "nombre": "Dra. Maria Rodriguez"
     }
   ],
   "disponibilidad": [
     {
       "id": 1,
+      
       "profesionalId": 1,
       "fecha": "2024-10-01",
       "horaInicio": "10:00",
@@ -66,6 +134,15 @@
       "fecha": "2024-10-02",
       "horaInicio": "10:30",
       "horaFin": "11:30"
+    },
+    {
+      "id": "26ea",
+      "nombre": "asdasdasd askjdajk",
+      "correo": "kajsdjkasdjk@ashda.cl",
+      "motivo": "kajdsjadjka",
+      "fecha": "2024-10-03",
+      "horaInicio": "14:00",
+      "horaFin": "15:00"
     }
   ]
 }

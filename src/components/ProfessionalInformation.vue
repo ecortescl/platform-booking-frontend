@@ -11,16 +11,19 @@
           <div class="flex items-center justify-between mb-4">
             <div>
               <h2 class="text-2xl font-semibold">{{ professional.name }}</h2>
-              <p class="text-gray-600">{{ professional.description }}</p>
+              <p class="text-gray-600">{{ professional.specialty }}</p>
+              <p class="text-gray-600">{{ professional.location }}</p>
+              <p class="text-gray-600">Disponible desde: {{ professional.availability }}</p>
             </div>
             <img src="https://via.placeholder.com/50" alt="Professional" class="rounded-full">
           </div>
           <div class="flex justify-around mb-4">
             <div v-for="time in professional.availableTimes" :key="time"
               class="p-2 text-center border rounded-lg cursor-pointer time-slot hover:bg-blue-100">
-              {{ time }}
+                 Disponible desde: {{ time }}
             </div>
           </div>
+
           <button @click="redirectToReserve" class="w-full py-2 text-white transition bg-blue-500 rounded-lg hover:bg-blue-600">Reservar</button>
         </div>
       </div>
@@ -32,24 +35,31 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 export default {
   name: 'ProfessionalInformation',
   setup() {
     const router = useRouter();
-    const professionals = ref([
-      { id: 1, name: 'Dr. José Rodríguez', description: 'Cardiólogo', availableTimes: ['10:00', '11:00', '12:00', '13:00'] },
-      { id: 2, name: 'Profesional 2', description: 'Texto secundario', availableTimes: ['12:30', '13:15', '15:00', '16:30'] },
-      { id: 3, name: 'Profesional 3', description: 'Texto secundario', availableTimes: ['08:00', '09:30', '11:00', '13:00'] },
-      { id: 4, name: 'Profesional 4', description: 'Texto secundario', availableTimes: ['12:00', '15:00', '15:30', '16:00'] },
-      { id: 5, name: 'Profesional 5', description: 'Texto secundario', availableTimes: ['12:30', '13:30', '14:00', '14:30'] },
-      { id: 6, name: 'Profesional 6', description: 'Texto secundario', availableTimes: ['10:00', '11:00', '12:00', '13:00'] },
-      { id: 7, name: 'Profesional 7', description: 'Texto secundario', availableTimes: ['12:30', '13:15', '15:00', '16:30'] },
-      { id: 8, name: 'Profesional 8', description: 'Texto secundario', availableTimes: ['08:00', '09:30', '11:00', '13:00'] },
-      { id: 9, name: 'Profesional 9', description: 'Texto secundario', availableTimes: ['12:00', '15:00', '15:30', '16:00'] },
-    ]);
+    const professionals = ref([]);
+
+    const fetchProfessionals = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/professionals');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        professionals.value = data;
+      } catch (error) {
+        console.error('Error fetching professionals:', error);
+      }
+    };
+
+    onMounted(() => {
+      fetchProfessionals();
+    });
 
     const redirectToReserve = () => {
       router.push({ name: 'reserva' });
