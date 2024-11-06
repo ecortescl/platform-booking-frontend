@@ -5,8 +5,7 @@ import About from '../views/About.vue';
 import Forgotpass from '../views/Forgotpass.vue';
 import Register from '../views/Register.vue';
 import ProfessionalDetail from '../components/ProfessionalDetail.vue';
-import Reserve from '../views/Reserve.vue'; // Importa el nuevo componente
-
+import Reserve from '../views/Reserve.vue'; 
 
 const routes = [
   { path: '/home', component: Home },
@@ -14,8 +13,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/forgotpass', component: Forgotpass },
   { path: '/register', component: Register },
-  
-  { path: '/reserve', component: Reserve }, // Nueva ruta para Reserve.vue
+  { path: '/reserve', name: 'reserva', component: Reserve }, // Nueva ruta para Reserve.vue con nombre
   // Agrega más rutas aquí según sea necesario
 ];
 
