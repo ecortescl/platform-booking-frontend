@@ -36,11 +36,14 @@
 
 <script>
 export default {
+  props: {
+    professional: Object
+  },
   data() {
     return {
       profesionales: [],
-      selectedProfessionalId: null,
-      selectedProfessional: null,
+      selectedProfessionalId: this.professional ? this.professional.id : null,
+      selectedProfessional: this.professional || null,
       disponibilidad: [],
       horarioSeleccionado: null,
       nombre: '',

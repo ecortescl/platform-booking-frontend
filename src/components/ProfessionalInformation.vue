@@ -24,7 +24,7 @@
             </div>
           </div>
 
-          <button @click="redirectToReserve" class="w-full py-2 text-white transition bg-blue-500 rounded-lg hover:bg-blue-600">Reservar</button>
+          <button @click="redirectToReserve(professional)" class="w-full py-2 text-white transition bg-blue-500 rounded-lg hover:bg-blue-600">Reservar</button>
         </div>
       </div>
 
@@ -61,8 +61,8 @@ export default {
       fetchProfessionals();
     });
 
-    const redirectToReserve = () => {
-      router.push({ name: 'reserva' });
+    const redirectToReserve = (professional) => {
+      router.push({ name: 'reserva', params: { professional } });
     };
 
     return {

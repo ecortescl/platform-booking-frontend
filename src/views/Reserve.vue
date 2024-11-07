@@ -1,6 +1,6 @@
 <template>
   <div class="mt-16">
-    <BookingForm />
+    <BookingForm :professional="professional" />
   </div>
 </template>
 
@@ -10,8 +10,13 @@ import BookingForm from '../components/BookingForm.vue';
 export default {
   components: {
     BookingForm
+  },
+  computed: {
+    professional() {
+      return this.$route.params.professional;
+    }
   }
-};
+}
 </script>
 
 <style scoped>
