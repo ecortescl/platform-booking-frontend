@@ -5,8 +5,8 @@ import About from '../views/About.vue';
 import Forgotpass from '../views/Forgotpass.vue';
 import Register from '../views/Register.vue';
 import ProfessionalDetail from '../components/ProfessionalDetail.vue';
-import Reserve from '../views/Reserve.vue'; // Importa el nuevo componente
-
+import Reserve from '../views/Reserve.vue';
+import BookingForm from '../components/BookingForm.vue'; // Importa el nuevo componente
 
 const routes = [
   { path: '/home', component: Home },
@@ -14,14 +14,17 @@ const routes = [
   { path: '/about', component: About },
   { path: '/forgotpass', component: Forgotpass },
   { path: '/register', component: Register },
-  
-  { path: '/reserve', component: Reserve }, // Nueva ruta para Reserve.vue
+  { path: '/reserve', name: 'reserva', component: Reserve },
+  { path: '/booking', name: 'booking', component: BookingForm }, // Nueva ruta para BookingForm.vue
   // Agrega más rutas aquí según sea necesario
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { left: 0, top: 0 };
+  }
 });
 
 export default router;

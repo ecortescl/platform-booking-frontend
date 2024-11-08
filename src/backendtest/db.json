@@ -36,20 +36,149 @@
       "availability": "2024-10-30"
     },
     {
-        "id": 6,
-        "name": "Dr. Ramon Rodríguez",
-        "specialty": "Dentista",
-        "location": "Las Condes",
-        "availability": "2024-10-28"
-    }, 
+      "id": 6,
+      "name": "Dr. Ramon Rodríguez",
+      "specialty": "Dentista",
+      "location": "Las Condes",
+      "availability": "2024-10-28"
+    },
     {
-        "id": 7,
-        "name": "Dra. Maria Rodriguez",
-        "specialty": "Dentista",
-        "location": "Las Condes",
-        "availability": "2024-10-28"
+      "id": 7,
+      "name": "Dra. Maria Rodriguez",
+      "specialty": "Dentista",
+      "location": "Las Condes",
+      "availability": "2024-10-28"
     }
-
-    
+  ],
+  "profesionales": [
+    {
+      "id": 1,
+      "nombre": "Dr. Juan Pérez"
+    },
+    {
+      "id": 2,
+      "nombre": "Dra. María López"
+    },
+    {
+      "id": 3,
+      "nombre": "Dr. Carlos Sánchez"
+    },
+    {
+      "id": 4,
+      "nombre": "Dra. Ana Martínez"
+    },
+    {
+      "id": 5,
+      "nombre": "Dr. José Rodríguez"
+    },
+    {
+      "id": 6,
+      "nombre": "Dr. Ramon Rodríguez"
+    },
+    {
+      "id": 7,
+      "nombre": "Dra. Maria Rodriguez"
+    }
+  ],
+  "disponibilidad": [
+    {
+      "id": 1,
+      "profesionalId": 1,
+      "fecha": "2024-10-01",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
+    },
+    {
+      "id": 2,
+      "profesionalId": 1,
+      "fecha": "2024-10-01",
+      "horaInicio": "11:30",
+      "horaFin": "12:30"
+    },
+    {
+      "id": 3,
+      "profesionalId": 2,
+      "fecha": "2024-10-02",
+      "horaInicio": "09:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": 4,
+      "profesionalId": 2,
+      "fecha": "2024-10-02",
+      "horaInicio": "10:30",
+      "horaFin": "11:30"
+    },
+    {
+      "id": 5,
+      "profesionalId": 3,
+      "fecha": "2024-10-03",
+      "horaInicio": "14:00",
+      "horaFin": "15:00"
+    },
+    {
+      "id": 6,
+      "profesionalId": 3,
+      "fecha": "2024-10-03",
+      "horaInicio": "15:30",
+      "horaFin": "16:30"
+    },
+    {
+      "id": 7,
+      "profesionalId": 4,
+      "fecha": "2024-10-29",
+      "horaInicio": "09:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": 8,
+      "profesionalId": 5,
+      "fecha": "2024-10-30",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
+    },
+    {
+      "id": 9,
+      "profesionalId": 6,
+      "fecha": "2024-10-28",
+      "horaInicio": "11:00",
+      "horaFin": "12:00"
+    },
+    {
+      "id": 10,
+      "profesionalId": 7,
+      "fecha": "2024-10-28",
+      "horaInicio": "12:00",
+      "horaFin": "13:00"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "4f7e",
+      "nombre": "Javier Moreno",
+      "correo": "javiiaisdia@hasdjas.cl",
+      "motivo": "asjdjasdjsad",
+      "fecha": "2024-10-02",
+      "horaInicio": "10:30",
+      "horaFin": "11:30"
+    },
+    {
+      "id": "26ea",
+      "nombre": "asdasdasd askjdajk",
+      "correo": "kajsdjkasdjk@ashda.cl",
+      "motivo": "kajdsjadjka",
+      "fecha": "2024-10-03",
+      "horaInicio": "14:00",
+      "horaFin": "15:00"
+    },
+    {
+      "id": "500d",
+      "nombre": "vicente collado",
+      "correo": "akjsdjkasdjk@jhsdhasd.cl",
+      "motivo": "dolor de rodilla",
+      "fecha": "2024-10-01",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
+    }
   ]
 }
