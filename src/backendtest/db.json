@@ -83,7 +83,6 @@
   "disponibilidad": [
     {
       "id": 1,
-      
       "profesionalId": 1,
       "fecha": "2024-10-01",
       "horaInicio": "10:00",
@@ -123,6 +122,34 @@
       "fecha": "2024-10-03",
       "horaInicio": "15:30",
       "horaFin": "16:30"
+    },
+    {
+      "id": 7,
+      "profesionalId": 4,
+      "fecha": "2024-10-29",
+      "horaInicio": "09:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": 8,
+      "profesionalId": 5,
+      "fecha": "2024-10-30",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
+    },
+    {
+      "id": 9,
+      "profesionalId": 6,
+      "fecha": "2024-10-28",
+      "horaInicio": "11:00",
+      "horaFin": "12:00"
+    },
+    {
+      "id": 10,
+      "profesionalId": 7,
+      "fecha": "2024-10-28",
+      "horaInicio": "12:00",
+      "horaFin": "13:00"
     }
   ],
   "reservas": [
@@ -143,6 +170,15 @@
       "fecha": "2024-10-03",
       "horaInicio": "14:00",
       "horaFin": "15:00"
+    },
+    {
+      "id": "500d",
+      "nombre": "vicente collado",
+      "correo": "akjsdjkasdjk@jhsdhasd.cl",
+      "motivo": "dolor de rodilla",
+      "fecha": "2024-10-01",
+      "horaInicio": "10:00",
+      "horaFin": "11:00"
     }
   ]
 }
