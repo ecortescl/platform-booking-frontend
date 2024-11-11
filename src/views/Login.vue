@@ -26,7 +26,6 @@
               required
               class="mt-1 block w-full p-2 border border-gray-500 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
             />
-            
           </div>
           <!-- Botón modificado -->
           <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-[#FFD700] transition duration-200">
@@ -40,11 +39,7 @@
             to="/forgotpass" 
             class="text-blue-500 hover:text-[#FFD700] transition duration-200">
             ¿Olvidó su contraseña?
-
-            
           </router-link>
-
-          
         </div>
       </div>
     </div>
@@ -62,7 +57,8 @@ export default {
     return {
       email: '',
       password: '',
-      error: ''
+      error: '',
+      csrfToken: ''
     };
   },
   methods: {
@@ -77,23 +73,44 @@ export default {
       }
       return true;
     },
+    async getCsrfToken() {
+      try {
+        const response = await fetch('https://platform-booking-backend.onrender.com/api/csrf-token');
+        if (!response.ok) {
+          throw new Error('Error al obtener el token CSRF');
+        }
+        const data = await response.json();
+        this.csrfToken = data.csrfToken;
+      } catch (error) {
+        console.error('Error al obtener el token CSRF:', error);
+        this.error = 'Error al obtener el token CSRF. Inténtalo de nuevo.';
+      }
+    },
     async login() {
       if (!this.validateForm()) return;
+      await this.getCsrfToken();
+      if (!this.csrfToken) {
+        this.error = 'No se pudo obtener el token CSRF. Inténtalo de nuevo.';
+        return;
+      }
       try {
-        const response = await fetch('https://api.example.com/login', {
+        const response = await fetch('https://platform-booking-backend.onrender.com/api/login', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'CSRF-Token': this.csrfToken
+          },
           body: JSON.stringify({ email: this.email, password: this.password })
         });
-        const data = await response.json();
-        if (response.ok) {
-          localStorage.setItem('token', data.token);
-          this.$router.push('/dashboard');
+        if (response.status === 403) {
+          this.error = 'Error al iniciar sesión. Inténtalo de nuevo.';
         } else {
-          this.error = data.message;
+          const data = await response.json();
+          // Manejar la respuesta exitosa
         }
-      } catch (err) {
-        this.error = 'Error en la conexión';
+      } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        this.error = 'Error al iniciar sesión. Inténtalo de nuevo.';
       }
     }
   }
