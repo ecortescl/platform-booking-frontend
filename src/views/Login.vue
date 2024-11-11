@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen bg-gray-200">
-    <Navbar /> <!-- Agregar el componente Navbar aquí -->
+    <!-- Agregar el componente Navbar aquí -->
 
     <div class="flex items-center justify-center flex-1">
       <div class="bg-[#1f2937] shadow-md rounded-lg p-8 max-w-sm w-full"> <!-- Color del fondo -->
