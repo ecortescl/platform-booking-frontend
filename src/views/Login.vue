@@ -31,7 +31,7 @@
           <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-[#FFD700] transition duration-200">
             Iniciar Sesión
           </button>
-          <p v-if="error" class="text-red-500 text-center mt-2">{{ error }}</p>
+          <p v-if="errorMessage" class="text-red-500 text-center mt-2">{{ errorMessage }}</p>
         </form>
         <!-- Botón "¿Olvidó su contraseña?" con cambio de color -->
         <div class="mt-4 text-center">
@@ -47,63 +47,53 @@
 </template>
 
 <script>
-import Navbar from '../components/Navbar.vue'; // Importar el componente Navbar
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default {
-  components: {
-    Navbar // Registrar el componente
-  },
-  data() {
-    return {
-      email: '',
-      password: '',
-      error: '',
-      csrfToken: ''
-    };
-  },
-  methods: {
-    validateForm() {
-      if (!this.email || !this.password) {
-        this.error = 'Todos los campos son obligatorios';
-        return false;
-      }
-      if (!this.email.includes('@')) {
-        this.error = 'Correo electrónico no válido';
-        return false;
-      }
-      return true;
-    },
-   
-    async login() {
-      if (!this.validateForm()) return;
-    
-     
+  name: 'Login',
+  setup() {
+    const email = ref('');
+    const password = ref('');
+    const errorMessage = ref('');
+    const router = useRouter();
+
+    const login = async () => {
       try {
         const response = await fetch('https://platform-booking-backend.onrender.com/api/login', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-          
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email: this.email, password: this.password })
+          body: JSON.stringify({
+            email: email.value,
+            password: password.value
+          })
         });
-        if (response.status === 403) {
-          this.error = 'Error al iniciar sesión. Inténtalo de nuevo.';
+
+        if (!response.ok) {
+          const data = await response.json();
+          errorMessage.value = data.message || 'Error al iniciar sesión';
         } else {
           const data = await response.json();
-          // Manejar la respuesta exitosa
-          console.log(data);
-          this.$router.push('/home');
+          // Manejar el éxito del inicio de sesión, por ejemplo, redirigir al usuario
+          router.push('/home');
         }
       } catch (error) {
-        console.error('Error al iniciar sesión:', error);
-        this.error = 'Error al iniciar sesión. Inténtalo de nuevo.';
+        errorMessage.value = 'Error de red';
       }
-    }
+    };
+
+    return {
+      email,
+      password,
+      errorMessage,
+      login
+    };
   }
 };
 </script>
 
 <style scoped>
-/* Estilos opcionales adicionales que podrían no estar en Tailwind */
+/* Agrega tus estilos aquí si es necesario */
 </style>
