@@ -99,37 +99,38 @@ export default {
     };
   },
   methods: {
-    async register() {
-      try {
-        const response = await fetch('http://localhost:3000/users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            run: this.run,
-            names: this.names,
-            surnames: this.surnames,
-            phone: this.phone,
-            email: this.email,
-            idRole: this.idRole,
-            registered: this.registered,
-            password: this.password
-          })
-        });
+  async register() {
+    try {
+      const response = await fetch('https://platform-booking-backend.onrender.com/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          rut: this.run, // Cambia `run` a `rut` si el backend lo espera así
+          names: this.names,
+          surnames: this.surnames,
+          phone: this.phone,
+          email: this.email,
+          password: this.password,
+          idRole: this.idRole, // Este campo parece estar relacionado con roles
+          registered: this.registered
+        })
+      });
 
-        if (!response.ok) {
-          throw new Error('Error en el registro');
-        }
-
-        const data = await response.json();
-        console.log('Registro exitoso:', data);
-        // Aquí puedes redirigir al usuario o mostrar un mensaje de éxito
-      } catch (error) {
-        this.error = error.message;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error en el registro');
       }
+
+      const data = await response.json();
+      console.log('Registro exitoso:', data);
+      // Aquí puedes redirigir al usuario o mostrar un mensaje de éxito
+    } catch (error) {
+      this.error = error.message;
     }
   }
+}
 };
 </script>
 
