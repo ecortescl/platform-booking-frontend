@@ -73,32 +73,17 @@ export default {
       }
       return true;
     },
-    async getCsrfToken() {
-      try {
-        const response = await fetch('https://platform-booking-backend.onrender.com/api/csrf-token');
-        if (!response.ok) {
-          throw new Error('Error al obtener el token CSRF');
-        }
-        const data = await response.json();
-        this.csrfToken = data.csrfToken;
-      } catch (error) {
-        console.error('Error al obtener el token CSRF:', error);
-        this.error = 'Error al obtener el token CSRF. Inténtalo de nuevo.';
-      }
-    },
+   
     async login() {
       if (!this.validateForm()) return;
-      await this.getCsrfToken();
-      if (!this.csrfToken) {
-        this.error = 'No se pudo obtener el token CSRF. Inténtalo de nuevo.';
-        return;
-      }
+    
+     
       try {
         const response = await fetch('https://platform-booking-backend.onrender.com/api/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'CSRF-Token': this.csrfToken
+          
           },
           body: JSON.stringify({ email: this.email, password: this.password })
         });
@@ -107,6 +92,8 @@ export default {
         } else {
           const data = await response.json();
           // Manejar la respuesta exitosa
+          console.log(data);
+          this.$router.push('/home');
         }
       } catch (error) {
         console.error('Error al iniciar sesión:', error);
