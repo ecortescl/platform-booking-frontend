@@ -10,26 +10,16 @@
           class="p-4 border rounded-lg shadow-lg professional-card">
           <div class="flex items-center justify-between mb-4">
             <div>
-              <h2 class="text-2xl font-semibold">{{ professional.name }}</h2>
+              <h2 class="text-2xl font-semibold">{{ professional.names }}</h2>
               <p class="text-gray-600">{{ professional.specialty }}</p>
               <p class="text-gray-600">{{ professional.location }}</p>
-              <p class="text-gray-600">Disponible desde: {{ professional.availability }}</p>
             </div>
             <img src="https://via.placeholder.com/50" alt="Professional" class="rounded-full">
-          </div>
-          <div class="flex justify-around mb-4">
-            <div v-for="time in professional.availableTimes" :key="time"
-              class="p-2 text-center border rounded-lg cursor-pointer time-slot hover:bg-blue-100">
-                 Disponible desde: {{ time }}
-            </div>
           </div>
 
           <button @click="redirectToReserve(professional)" class="w-full py-2 text-white transition bg-blue-500 rounded-lg hover:bg-blue-600">Reservar</button>
         </div>
       </div>
-
-      <!-- Navegación -->
-      
     </div>
   </div>
 </template>
@@ -46,12 +36,14 @@ export default {
 
     const fetchProfessionals = async () => {
       try {
-        const response = await fetch('http://localhost:3000/professionals');
+        const response = await fetch('https://platform-booking-backend.onrender.com/api/users');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        professionals.value = data;
+
+        // Filtra los profesionales (idRole: 2)
+        professionals.value = data.filter(user => user.idRole === 2);
       } catch (error) {
         console.error('Error fetching professionals:', error);
       }
@@ -90,18 +82,7 @@ export default {
   transform: scale(1.05);
 }
 
-.time-slot {
-  width: 70px;
-  
-}
-
 button {
   transition: background-color 0.3s ease;
-  margin-bottom: var(--time-slot-margin-bottom, 80px); 
-}
-
-
-.container {
-  margin-bottom: 2rem; 
 }
 </style>
