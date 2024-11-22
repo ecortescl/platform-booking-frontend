@@ -25,16 +25,16 @@
             <div :class="{'hidden': !isDropdownOpen, 'block': isDropdownOpen}" id="dropdownNavbar" class="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                 <li>
-                  <span class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profesionales</span>
+                  <router-link to="/pro" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profesionales</router-link>
                 </li>
                 <li>
-                  <span class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sucursales</span>
+                  <router-link to="/suc" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sucursales</router-link>
                 </li>
                 <li>
-                  <span class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sobre Nosotros</span>
+                  <router-link to="/about" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sobre Nosotros</router-link>
                 </li>
                 <li>
-                  <span class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Atención al Cliente</span>
+                  <router-link to="/support" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Atención al Cliente</router-link>
                 </li>
               </ul>
             </div>
