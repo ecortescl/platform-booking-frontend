@@ -34,23 +34,57 @@ export default {
     const router = useRouter();
     const professionals = ref([]);
 
-    const fetchProfessionals = async () => {
+    const login = async () => {
       try {
-        const response = await fetch('https://platform-booking-backend.onrender.com/api/users');
+        const response = await fetch('https://platform-booking-backend.onrender.com/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: 'admin@test.cl', // Reemplaza con el email del usuario
+            password: 'admin123' // Reemplaza con la contraseña del usuario
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        return data.token; // Asumiendo que el token está en la propiedad 'token'
+      } catch (error) {
+        console.error('Error during login:', error);
+      }
+    };
+
+    const fetchProfessionals = async (token) => {
+      try {
+        const response = await fetch('https://platform-booking-backend.onrender.com/api/users', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log('Data fetched from API:', data);
 
         // Filtra los profesionales (idRole: 2)
         professionals.value = data.filter(user => user.idRole === 2);
+        console.log('Filtered professionals:', professionals.value);
       } catch (error) {
         console.error('Error fetching professionals:', error);
       }
     };
 
-    onMounted(() => {
-      fetchProfessionals();
+    onMounted(async () => {
+      console.log('Component mounted');
+      const token = await login();
+      if (token) {
+        fetchProfessionals(token);
+      }
     });
 
     const redirectToReserve = (professional) => {

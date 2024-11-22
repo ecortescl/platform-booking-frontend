@@ -4,14 +4,19 @@
 
     <ImageCarousel />
 
-    <div class="flex flex-col items-center justify-center flex-grow">
-      <h1 class="text-7xl mb-8 text-overlay">
+    <div class="flex flex-col items-center justify-center flex-grow" >
+      <h1 class="text-7xl mb-8 text-overlay"style="padding-top: 2rem;">
         Encuentra a tu profesional ideal
       </h1>
 
       <ProfessionalSearch @search="handleSearch" />
+      
+      <div class="my-10"></div>
+
       <ProfessionalInformation />
     </div>
+
+    <div class="my-8"></div>
 
     <div class="how-it-works">
       <h2 class="text-4xl mb-6 text-overlay">¿Cómo Funciona Nuestro Servicio?</h2>
