@@ -4,14 +4,16 @@ import Login from '../views/Login.vue';
 import About from '../views/About.vue';
 import Forgotpass from '../views/Forgotpass.vue';
 import Register from '../views/Register.vue';
-import ProfessionalDetail from '../components/ProfessionalDetail.vue';
 import Reserve from '../views/Reserve.vue';
-import BookingForm from '../components/BookingForm.vue';
-import ProHome from '../views/ProHome.vue';
+import BookingForm from '../components/BookingForm.vue'; // Cambiada la ruta a components
 import AdminHome from '../views/AdminHome.vue';
+import ProHome from '../views/ProHome.vue';
 import ProView from '../views/ProView.vue';
 import SucView from '../views/SucView.vue';
 import SupportView from '../views/SupportView.vue';
+import MyReservations from '../views/MyReservations.vue';
+import Book from '../views/Book.vue';
+import EditProfile from '../views/EditProfile.vue';
 
 const routes = [
   { path: '/home', component: Home },
@@ -25,7 +27,10 @@ const routes = [
   { path: '/prohome', name: 'prohome', component: ProHome },
   { path: '/pro', name: 'pro', component: ProView },
   { path: '/suc', name: 'suc', component: SucView },
-  { path: '/support', name: 'support', component: SupportView }
+  { path: '/support', name: 'support', component: SupportView },
+  { path: '/myreservations', name: 'myreservations', component: MyReservations },
+  { path: '/book', name: 'book', component: Book },
+  { path: '/editprofile', name: 'editprofile', component: EditProfile }
 ];
 
 const router = createRouter({
